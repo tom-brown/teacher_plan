@@ -1,6 +1,9 @@
 class Goal < ApplicationRecord
   # Direct associations
 
+  has_many   :action_steps,
+             :dependent => :destroy
+
   has_many   :comments,
              :dependent => :destroy
 
