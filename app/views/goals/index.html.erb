@@ -15,7 +15,7 @@
 
       <% @goals.each do |goal| %>
       <tr>
-        <td><%= goal.improvement_plan_id %></td>
+        <td><%= goal.improvement_plan.user_id %></td>
         <td>
           <a href="/goals/<%= goal.id %>" class="btn btn-primary">Show</a>
           <a href="/goals/<%= goal.id %>/edit" class="btn btn-warning">Edit</a>
