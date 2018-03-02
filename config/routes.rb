@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Goal resource:
+  # CREATE
+  get "/goals/new", :controller => "goals", :action => "new"
+  post "/create_goal", :controller => "goals", :action => "create"
+
+  # READ
+  get "/goals", :controller => "goals", :action => "index"
+  get "/goals/:id", :controller => "goals", :action => "show"
+
+  # UPDATE
+  get "/goals/:id/edit", :controller => "goals", :action => "edit"
+  post "/update_goal/:id", :controller => "goals", :action => "update"
+
+  # DELETE
+  get "/delete_goal/:id", :controller => "goals", :action => "destroy"
+  #------------------------------
+
   # Routes for the Improvement_plan resource:
   # CREATE
   get "/improvement_plans/new", :controller => "improvement_plans", :action => "new"
