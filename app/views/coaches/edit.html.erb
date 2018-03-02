@@ -33,7 +33,7 @@
           Improvement plan
         </label>
 
-        <input type="text" id="improvement_plan_id" name="improvement_plan_id" placeholder="Improvement plan" class="form-control" value="<%= @coach.improvement_plan_id %>">
+        <%= select_tag(:improvement_plan_id, options_from_collection_for_select(ImprovementPlan.all, :id, :user_id, @coach.improvement_plan_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
