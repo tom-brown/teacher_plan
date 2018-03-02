@@ -17,7 +17,7 @@
       <% @comments.each do |comment| %>
       <tr>
         <td><%= comment.improvement_plan.user_id %></td>
-        <td><%= comment.goal_id %></td>
+        <td><%= comment.goal.improvement_plan_id %></td>
         <td>
           <a href="/comments/<%= comment.id %>" class="btn btn-primary">Show</a>
           <a href="/comments/<%= comment.id %>/edit" class="btn btn-warning">Edit</a>
