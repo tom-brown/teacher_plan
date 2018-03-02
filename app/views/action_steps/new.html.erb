@@ -24,7 +24,7 @@
           Goal
         </label>
 
-        <input type="text" id="goal_id" name="goal_id" placeholder="Goal" class="form-control" value="<%= @action_step.goal_id %>">
+        <%= select_tag(:goal_id, options_from_collection_for_select(Goal.all, :id, :improvement_plan_id, @action_step.goal_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for description -->
