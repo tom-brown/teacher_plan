@@ -47,8 +47,6 @@ class ImprovementPlansController < ApplicationController
 
   def update
     @improvement_plan = ImprovementPlan.find(params[:id])
-
-    @improvement_plan.user_id = params[:user_id]
     @improvement_plan.state = params[:state]
 
     save_status = @improvement_plan.save
