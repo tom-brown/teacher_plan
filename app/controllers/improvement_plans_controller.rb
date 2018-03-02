@@ -16,6 +16,9 @@ class ImprovementPlansController < ApplicationController
   end
 
   def show
+    @coach = Coach.new
+    @goal = Goal.new
+    @comment = Comment.new
     @improvement_plan = ImprovementPlan.find(params[:id])
 
     render("improvement_plans/show.html.erb")
