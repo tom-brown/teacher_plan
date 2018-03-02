@@ -1,4 +1,14 @@
 class ImprovementPlansController < ApplicationController
+  before_action :current_user_must_be_improvement_plan_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_improvement_plan_user
+    improvement_plan = ImprovementPlan.find(params[:id])
+
+    unless current_user == improvement_plan.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @improvement_plans = ImprovementPlan.all
 
