@@ -1,6 +1,9 @@
 class ImprovementPlan < ApplicationRecord
   # Direct associations
 
+  has_many   :coaches,
+             :dependent => :destroy
+
   has_many   :goals,
              :dependent => :destroy
 
