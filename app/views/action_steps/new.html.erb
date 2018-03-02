@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @action_step.errors.any? %>
+  <% @action_step.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Action Step</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_action_step" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for goal_id -->
+      <div class="form-group">
+        <label for="goal_id" class="control-label">
+          Goal
+        </label>
+
+        <input type="text" id="goal_id" name="goal_id" placeholder="Goal" class="form-control" value="<%= @action_step.goal_id %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @action_step.description %></textarea>
+      </div>
+
+      <!-- Label and input for target_date -->
+      <div class="form-group">
+        <label for="target_date" class="control-label">
+          Target date
+        </label>
+
+        <input type="text" id="target_date" name="target_date" placeholder="Target date" class="form-control" value="<%= @action_step.target_date %>">
+      </div>
+
+      <!-- Label and input for resources -->
+      <div class="form-group">
+        <label for="resources" class="control-label">
+          Resources
+        </label>
+
+        <input type="text" id="resources" name="resources" placeholder="Resources" class="form-control" value="<%= @action_step.resources %>">
+      </div>
+
+      <!-- Label and input for specs -->
+      <div class="form-group">
+        <label for="specs" class="control-label">
+          Specs
+        </label>
+
+        <input type="text" id="specs" name="specs" placeholder="Specs" class="form-control" value="<%= @action_step.specs %>">
+      </div>
+
+      <!-- Label and input for winning -->
+      <div class="form-group">
+        <label for="winning" class="control-label">
+          Winning
+        </label>
+
+        <input type="text" id="winning" name="winning" placeholder="Winning" class="form-control" value="<%= @action_step.winning %>">
+      </div>
+
+      <!-- Label and input for lead -->
+      <div class="form-group">
+        <label for="lead" class="control-label">
+          Lead
+        </label>
+
+        <input type="text" id="lead" name="lead" placeholder="Lead" class="form-control" value="<%= @action_step.lead %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Action Step
+      </button>
+      or
+      <a href="/action_steps">Cancel</a>
+    </form>
+  </div>
+</div>

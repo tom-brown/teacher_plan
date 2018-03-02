@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h3>Action Step #<%= @action_step.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Goal</dt>
+      <dd><%= @action_step.goal_id %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @action_step.description %></dd>
+
+      <dt>Target date</dt>
+      <dd><%= @action_step.target_date %></dd>
+
+      <dt>Resources</dt>
+      <dd><%= @action_step.resources %></dd>
+
+      <dt>Specs</dt>
+      <dd><%= @action_step.specs %></dd>
+
+      <dt>Winning</dt>
+      <dd><%= @action_step.winning %></dd>
+
+      <dt>Lead</dt>
+      <dd><%= @action_step.lead %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/action_steps" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/action_steps/<%= @action_step.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_action_step/<%= @action_step.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

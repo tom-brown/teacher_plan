@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>
+    Action steps
+    <a href="/action_steps/new" class="btn btn-lg btn-success">New Action step</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Goal</th>
+        <th>Description</th>
+        <th>Target date</th>
+        <th>Resources</th>
+        <th>Specs</th>
+        <th>Winning</th>
+        <th>Lead</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @action_steps.each do |action_step| %>
+      <tr>
+        <td><%= action_step.goal_id %></td>
+        <td><%= action_step.description %></td>
+        <td><%= action_step.target_date %></td>
+        <td><%= action_step.resources %></td>
+        <td><%= action_step.specs %></td>
+        <td><%= action_step.winning %></td>
+        <td><%= action_step.lead %></td>
+        <td>
+          <a href="/action_steps/<%= action_step.id %>" class="btn btn-primary">Show</a>
+          <a href="/action_steps/<%= action_step.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_action_step/<%= action_step.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
