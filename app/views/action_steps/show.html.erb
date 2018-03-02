@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Goal</dt>
-      <dd><%= @action_step.goal_id %></dd>
+      <dd>
+        <% if @action_step.goal.present? %>
+          <a href="/goals/<%= @action_step.goal_id %>">
+            <%= @action_step.goal.improvement_plan_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Description</dt>
       <dd><%= @action_step.description %></dd>

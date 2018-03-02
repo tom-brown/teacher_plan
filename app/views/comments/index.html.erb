@@ -16,8 +16,20 @@
 
       <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.improvement_plan.user_id %></td>
-        <td><%= comment.goal.improvement_plan_id %></td>
+        <td>
+          <% if comment.improvement_plan.present? %>
+            <a href="/improvement_plans/<%= comment.improvement_plan.id %>">
+              <%= comment.improvement_plan.user_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if comment.goal.present? %>
+            <a href="/goals/<%= comment.goal.id %>">
+              <%= comment.goal.improvement_plan_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/comments/<%= comment.id %>" class="btn btn-primary">Show</a>
           <a href="/comments/<%= comment.id %>/edit" class="btn btn-warning">Edit</a>

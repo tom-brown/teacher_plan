@@ -21,7 +21,13 @@
 
       <% @action_steps.each do |action_step| %>
       <tr>
-        <td><%= action_step.goal.improvement_plan_id %></td>
+        <td>
+          <% if action_step.goal.present? %>
+            <a href="/goals/<%= action_step.goal.id %>">
+              <%= action_step.goal.improvement_plan_id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= action_step.description %></td>
         <td><%= action_step.target_date %></td>
         <td><%= action_step.resources %></td>
