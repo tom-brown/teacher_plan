@@ -10,7 +10,7 @@ class ImprovementPlansController < ApplicationController
   end
 
   def index
-    @improvement_plans = ImprovementPlan.all
+    @improvement_plans = ImprovementPlan.page(params[:page]).per(10)
 
     render("improvement_plans/index.html.erb")
   end
